@@ -1,0 +1,44 @@
+<query type="node">
+  <newer than="2011-08-01T00:00:00Z"/>
+  <has-kv k="highway"/>
+  <bbox-query 
+s="25.5494172" n="25.5915935" w="-80.4065652" e="-80.3664774"/>
+</query>
+<print mode="meta"/>
+
+
+
+
+
+
+
+<query type="way">
+  <newer than="2011-01-31T00:00:00Z"/>
+  <has-kv k="highway"/>
+  <bbox-query 
+s="33.7243397" n="40.0107871" w="-83.1445312" e="-73.9599609"/>
+</query>
+<print mode="meta"/>
+
+
+
+
+s="33.7243397" n="40.0107871" w="-80.4065652" e="-80.3664774"
+min lat=s, max lat= n, min log=w, max lon =e
+
+
+
+
+<query type="way">
+  <has-kv k="building"/>
+  
+  <bbox-query/><!--this is auto-completed with the
+                   current map view coordinates.-->
+</query>
+ 
+<union>
+  <item /> 
+  <recurse type="way-node"/>
+</union>
+ 
+<print mode="meta"/>

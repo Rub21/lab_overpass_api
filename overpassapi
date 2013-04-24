@@ -1,0 +1,50 @@
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=road][bbox=-42.6622,-19.5434,-42.4658,-19.4009][@meta]
+
+
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[name=FIXME][bbox=-42.6622,-19.5434,-42.4658,-19.4009][@meta]
+
+
+
+
+osm2pgsql -v --create --hstore-all --database testpbf --username postgres --style default.style  -r pbf .maryland.osm.pbf
+
+osm2pgsql --extra-attributes -v  -S default.style -d db_maryland06 maryland.osm.bz2
+
+
+
+																		 Menor		Menor		Mayor		Mayor
+																			[3]     [1]       [4]        [2]
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox=-42.6622,-19.5434,-42.4658,-19.4009][@meta]
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox=-76.4373779, 37.8661808,-75.0146484,39.5252295][@meta]
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -79.453125, 37.9095336 ,-74.7180176 ,40.1620834][@meta]
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -80.3320312, 36.9674495 ,-74.7509766 ,40.0023719][@meta]
+
+florida
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -82.5842285, 24.9063672 ,-79.5080566 ,29.6116701][@meta]
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -82.5842285, 24.9063672 ,-79.5080566 ,29.6116701][@meta]
+
+
+
+florida1
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -88.989257, 24.046464 ,-79.365234 ,33.391157][@meta]
+2.   http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -80.7714844 , 25.1452846 ,-79.7442627 ,27.1764691][@meta]
+
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -85.012207 , 26.8436774 ,-79.0246582 ,30.5054839][@meta]
+
+FLORIDA FINAL 
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -89.2529297 , 24.4471496 ,-79.0576172 ,31.3161014][@meta]
+
+VIRGINIA
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -82.6611328 , 36.2797072 ,-74.6191406 ,40.6139524][@meta]
+
+cOLORADO
+
+http://overpass.osm.rambler.ru/cgi/xapi?way[@user=Rub21][highway=*][bbox= -120.1464844 , 35.2456191 ,-101.8652344 ,41.8368279][@meta]
+
