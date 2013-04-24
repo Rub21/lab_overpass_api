@@ -24,3 +24,11 @@ lab_overpass_api
 	</query>
 	<print mode="meta"/>
 
+
+	#all us
+	<query type="node">
+  <newer than="2013-04-20T00:00:00Z 2013-04-21T00:00:00Z"/>  
+  <bbox-query 
+s="23.6445242" n="50.007739" w="-127.4414062" e="-64.5117187"/>
+</query>
+<print mode="meta"/>

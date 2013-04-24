@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Download OSM Data</title>
+    <link type='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' />
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <link type='text/css' href='css/style.css' rel='stylesheet' />
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="title">
+                <a class="brand" href="#">Downland  OSM Data in JOSM</a>
+
+            </div>
+            <div class="container controls">
+                <ul class="nav">
+                    <li>
+                        <div id="datetimepicker" class="input-append">
+                            <input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+                        <span class="add-on"> <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+
+                    </div>
+                </li>
+                <li >
+                    <a href="#" id="node" >Points</a>
+                </li>
+                <li>
+                    <a href="#" id="ways">Way</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+<script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
