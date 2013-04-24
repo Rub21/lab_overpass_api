@@ -49,9 +49,9 @@
             var hour = date_hour.substring(11, 19).split(":");
             console.log(date);
             console.log(hour);
-
+            //<newer than="' + date[2] + '-' + date[0] + '-' + date[1] + 'T' + hour[0] + ':' + hour[1] + ':' + hour[2] + 'Z"/>'
             var query = a + '<query type="' + type + '"> <newer than="' + date[2] + '-' + date[0] + '-' + date[1] + 'T' + hour[0] + ':' + hour[1] + ':' + hour[2] + 'Z"/>' + //2013-04-21T00:00:00Z
-                '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/>' +
+            '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/>' +
                 '</query> <print mode="meta"/>';
             console.log(query);
             $.get(dir + "import", {
