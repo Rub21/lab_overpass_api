@@ -40,8 +40,6 @@
             var dir = "http://127.0.0.1:8111/";
             var mapzoom = map.getZoom();
             var locations = (map.getExtent() + '').split(',');
-
-
             //date 
             var date_hour = $('#datetimepicker input').attr('value');
 
