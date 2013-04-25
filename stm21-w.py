@@ -18,7 +18,7 @@ counter = 0
 def save(attrib):
     global counter
     counter = counter +1   
-    print counter  
+    #print counter  
     attrib_user = attrib.get('user', "none")
     pt = {
             "type": "Feature",
@@ -33,9 +33,10 @@ def save(attrib):
             }
         } 
     geojson['features'].append(pt)
-    if (counter % 100 == 0):
+    if (counter % 10000 == 0):
+        #print counter
         json.dump(geojson, open(json_filename, 'w'))
-    #print("%d done===================================================================" % counter)   
+        print("%d done" % counter)
 
 
 def start_element(name, attrs):
