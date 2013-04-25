@@ -67,21 +67,21 @@
 
 
         $('#json').click(function() {
-
-
             var query = '[out:json];node(newer:"2013-04-24T13:00:00Z")( 27.745, -84.707,29.691, -77.204);out meta;';
             var url = 'http://overpass.osm.rambler.ru/cgi/interpreter?data=' + query;
             //console.log(url);
-            window.open(url, 'JSON');
-            return false;
+            $.getJSON(url, {             
+                format: "json"
+            }).done(function(data) {
+                console.log(data);
+                console.log(data.elements);
+                /*$.each(data.items, function(i, item) {
+                
+                });*/
+            });
 
+           //window.open(url, 'JSON');
+            //return false;
         });
-
-
-        function getdata() {
-
-
-        }
-
 
     })();
