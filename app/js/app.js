@@ -74,19 +74,44 @@
             $.getJSON(url, {
                 format: "json"
             }).done(function(data) {
-                console.log(data);
-                console.log(data.elements);
-                /*$.each(data.items, function(i, item) {
-                
-                });*/
+                //console.log(data);
+                //console.log(data.elements);
+
+                var geojson = {
+                    "type": "FeatureCollection",
+                    "features": []
+                };
+
+                $.each(data.elements, function(i, item) {
+                    // console.log(item)
+                    var d = {
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [item.lon, item.lat]
+                        },
+                        "type": "Feature",
+                        "properties": {
+
+                            "timestamp": moment(item.timestamp.replace('T', ' ').replace('Z', '')).unix(),
+                            "version": item.version,
+                            "user": item.user
+                        }
+                    };
+                    geojson.features.push(d);
+
+                });
+
+                console.log(geojson);
                 $('#map').removeClass('loading');
                 $('#btn-full-with').trigger('click');
 
-                createfile(data);
+                createfile(geojson);
+
+
+
             });
 
-            //window.open(url, 'JSON');
-            //return false;
+
         });
 
 
@@ -228,11 +253,21 @@
 
             //var btn = document.getElementById("linkButton");
             var axx = document.getElementById("osm");
+            axx.download = 'osm.json';
+
             // I used this online encoder to create the data url.
             // axx.href = 'data:text/csv;base64,MTsyOzQ=';  // This was my first test, not having the encoder. 
-            axx.href = 'data:text/csv;base64,' + Base64.encode(JSON.stringify(d));
+            axx.href = 'data:text/json;base64,' + Base64.encode(JSON.stringify(d));
         }
 
+        function getTimestamp(str) {
+            var d = str.match(/\d+/g); // extract date parts
+            return +new Date(d[0], d[1], d[2], d[3], d[4], d[5]).getTime(); // build Date object
+        }
+
+        //getTimestamp("2010-03-09 12:21:00"); // 1268158860000
+
+        //2013-04-24T17:49:48Z
 
 
     })();
