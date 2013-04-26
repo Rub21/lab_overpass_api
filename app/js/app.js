@@ -80,6 +80,7 @@
                 
                 });*/
                 $('#map').removeClass('loading');
+                $('#btn-full-with').trigger('click');
 
                 createfile(data);
             });
@@ -225,11 +226,11 @@
 
 
 
-           //var btn = document.getElementById("linkButton");
-            var axx = document.getElementById("dowland");
+            //var btn = document.getElementById("linkButton");
+            var axx = document.getElementById("osm");
             // I used this online encoder to create the data url.
             // axx.href = 'data:text/csv;base64,MTsyOzQ=';  // This was my first test, not having the encoder. 
-            axx.href = 'data:text/csv;base64,' + d;
+            axx.href = 'data:text/csv;base64,' + Base64.encode(JSON.stringify(d));
         }
 
 

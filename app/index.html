@@ -37,9 +37,6 @@
                 <li>
                     <a href="#" id="json">Json</a>
                 </li>
-                <li>
-                    <a type="button" id="dowland">Dowland</a>
-                </li>
 
             </ul>
         </div>
@@ -47,6 +44,18 @@
 </div>
 
 <div id="map"></div>
+
+<div id="popover" class="modal hide fade" tabindex="-1" data-width="760">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4>Dowland Data</h4>
+    </div>
+    <div class="modal-body">
+        <a type="button" class="btn" id="osm">Dowland</a>
+    </div>
+</div>
+
+<a href="#popover" id="btn-full-with"  class="pull-right" data-toggle="modal"></a>
 
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
 <script type="text/javascript"
