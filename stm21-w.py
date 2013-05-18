@@ -33,7 +33,7 @@ def save(attrib):
             }
         } 
     geojson['features'].append(pt)
-    if (counter % 10000 == 0):
+    if (counter % 50 == 0):
         #print counter
         json.dump(geojson, open(json_filename, 'w'))
         print("%d done" % counter)
