@@ -28,9 +28,10 @@
             pick12HourFormat: true
         });
 
-        /*$('#ways').click(function() {
-            download('<recurse type="node-way"/>', 'way');
-        });*/
+        $('#ways').click(function() {
+            download_ways('way');
+         
+        });
 
         $('#node').click(function(e) {
             download('node');
@@ -105,6 +106,38 @@
         });
 
 
+        function download_ways(type) {
+
+
+            var mapzoom = map.getZoom();
+            if (mapzoom >= 7) {
+                var dir = "http://127.0.0.1:8111/";
+
+                var locations = (map.getExtent() + '').split(','); //date 
+                var date_hour = $('#datetimepicker input').attr('value');
+                var date = date_hour.substring(0, 10).split("/");
+                var hour = date_hour.substring(11, 19).split(":");
+
+             
+                var query = '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/> <recurse type="node-way"/><query type="way"><item/><has-kv k="highway" /></query><union><item/><recurse type="down"/></union><print mode="meta"/>';
+
+    
+
+                console.log(query);
+                
+                $.get(dir + "import", {
+                    url: 'http://overpass-api.de/api/interpreter?data=' + query
+                }).error(function() {
+                    alert("Error: Enable JOSM remote!")
+                }).success(function() {
+                    e.dialog("close")
+                });
+            } else {
+
+                alert("zoom in a little so we don't have to load a huge area from the API.")
+            }
+        };
+
 
         function download(type) {
 
@@ -129,6 +162,7 @@
     
 
                 console.log(query);
+
                 $.get(dir + "import", {
                     url: 'http://overpass-api.de/api/interpreter?data=' + query
                 }).error(function() {
