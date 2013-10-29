@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Download OSM Data</title>
+    <link type='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+    <link type='text/css' href='css/style.css' rel='stylesheet' />
+    <style type="text/css">
+    /* Test purposes */
+body { padding: 40px; }
+.carousel-inner .item p { height: 50px; line-height: 50px; vertical-align: middle; text-align: center }
+
+</style>
+</head>
+<body>
+
+  <button class="btn" data-slide-index="0">0</button>
+<button class="btn" data-slide-index="1">1</button>
+
+<div id="myModal" class="modal fade">
+    <div id="myCarousel" class="carousel">
+        <div class="carousel-inner">
+            <div class="active item">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <!--<div class="modal-header">
+                    
+                    <h3>Title 0</h3>
+                </div>-->
+             
+                    <img class="active item" class="modal-body" src="images/_G7V0152.JPG">
+         
+            </div>
+            <div class="item">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+              <!--  <div class="modal-header">
+                    
+                    <h3>Title 1</h3>
+                </div>-->
+                
+                    <img  class="item" class="modal-body" src="images/_G7V0151.jpg">
+          
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+
+<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+<script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript"   src="js/bootstrap.js"></script>
+<script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
+     <script type="text/javascript"
+     src="https://raw.github.com/timrwood/moment/2.0.0/min/moment.min.js"></script>
+     
+<script src="js/app.js"></script>
+
+<script type="text/javascript">
+var $myModal = $('#myModal').modal({show: false});
+var $myCarousel = $('#myCarousel').carousel({'interval': false});
+
+$('.btn').click(function() {
+    $myModal.modal('show');
+    $myCarousel.carousel($(this).data('slide-index'));
+});
+</script>
+</body>
+</html>

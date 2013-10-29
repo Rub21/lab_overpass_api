@@ -1,6 +1,24 @@
     // Set up map
     var map = mapbox.map('map');
-    map.addLayer(mapbox.layer().id('ruben.map-hly0tebv'));
+
+    /*******************************capa de Mapbox******************/
+
+    /* map.addLayer(mapbox.layer().id('ruben.map-hly0tebv'));
+     
+     
+     */
+    /*******************************capa de osm******************/
+
+
+    var layer_osm = new MM.Layer(new MM.MapProvider(function(coord) {
+        var img = parseInt(coord.zoom) + '/' + parseInt(coord.column) + '/' + parseInt(coord.row) + '.png';
+        return "http://a.tile.openstreetmap.org/" + img,
+            "http://b.tile.openstreetmap.org/" + img,
+            "http://c.tile.openstreetmap.org/" + img;
+    }));
+
+
+    map.addLayer(layer_osm);
 
     map.setZoomRange(3, 18);
     map.centerzoom({
@@ -11,6 +29,8 @@
     map.ui.zoombox.add();
     map.ui.hash.add();
     map.ui.attribution.add().content('<a href="http://www.openstreetmap.org/copyright">(c) OpenStreetMap contributors</a>');
+
+
 
     /*
     var nowTemp = new Date();
@@ -30,7 +50,7 @@
 
         $('#ways').click(function() {
             download_ways('way');
-         
+
         });
 
         $('#node').click(function(e) {
@@ -118,13 +138,13 @@
                 var date = date_hour.substring(0, 10).split("/");
                 var hour = date_hour.substring(11, 19).split(":");
 
-             
+
                 var query = '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/> <recurse type="node-way"/><query type="way"><item/><has-kv k="highway" /></query><union><item/><recurse type="down"/></union><print mode="meta"/>';
 
-    
+
 
                 console.log(query);
-                
+
                 $.get(dir + "import", {
                     url: 'http://overpass-api.de/api/interpreter?data=' + query
                 }).error(function() {
@@ -154,12 +174,12 @@
                 /* var query = '<query type="' + type + '"> <newer than="' + date[2] + '-' + date[0] + '-' + date[1] + 'T' + hour[0] + ':' + hour[1] + ':' + hour[2] + 'Z"/>' + //2013-04-21T00:00:00Z
                 '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/>' +
                     '</query> <print mode="meta"/>';*/
-                
+
                 var query = '<query type="' + type + '"><user name = "Rub21"/>' + //2013-04-21T00:00:00Z
                 '<bbox-query s="' + locations[2] + '" n="' + locations[0] + '" w="' + locations[1] + '" e="' + locations[3] + '"/>' +
                     '</query> <print mode="meta"/>';
 
-    
+
 
                 console.log(query);
 
