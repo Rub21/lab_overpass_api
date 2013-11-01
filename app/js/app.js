@@ -19,6 +19,7 @@
 
 
     map.addLayer(layer_osm);
+    map.addLayer(mapbox.layer().id('ruben.us-over'));
 
     map.setZoomRange(3, 18);
     map.centerzoom({
@@ -348,6 +349,6 @@
         //getTimestamp("2010-03-09 12:21:00"); // 1268158860000
 
         //2013-04-24T17:49:48Z
-
+    /*998055736*/
 
     })();
